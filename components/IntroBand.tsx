@@ -55,7 +55,7 @@ export default function IntroBand() {
           <p className="text-[11px] uppercase tracking-widest2 text-cream/60 mb-3">
             Since
           </p>
-          <p className="font-display italic text-2xl">2019</p>
+          <p className="font-display italic text-2xl">2026</p>
         </motion.div>
 
         <motion.div
@@ -66,9 +66,9 @@ export default function IntroBand() {
           custom={2}
           className="p-8 md:p-10 border-b md:border-b-0 md:border-r border-cream/15 text-sm leading-relaxed text-cream/80"
         >
-          From effortless essentials to statement pieces, our collections
-          blend contemporary design with everyday versatility, cut for the
-          pause between morning rush and evening plans.
+          From effortless essentials to statement pieces, our collections blend
+          contemporary design with everyday versatility, cut for the pause
+          between morning rush and evening plans.
         </motion.div>
 
         <motion.div
@@ -79,9 +79,9 @@ export default function IntroBand() {
           custom={3}
           className="p-8 md:p-10 text-sm leading-relaxed text-cream/80"
         >
-          We believe great style should feel effortless. Every piece is
-          designed to help you look confident and move freely — quality and
-          timeless design that stays relevant season after season.
+          We believe great style should feel effortless. Every piece is designed
+          to help you look confident and move freely — quality and timeless
+          design that stays relevant season after season.
         </motion.div>
       </div>
 

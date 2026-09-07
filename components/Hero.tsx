@@ -60,7 +60,7 @@ export default function Hero() {
         New Season — Noon Edit
       </div>
       <div className="absolute top-24 right-6 md:right-10 z-10 text-cream/70 text-[11px] uppercase tracking-widest2 text-right hidden sm:block">
-        Dhaka · Est. 2019
+        Dhaka · Est. 2026
       </div>
 
       {/* Giant wordmark */}

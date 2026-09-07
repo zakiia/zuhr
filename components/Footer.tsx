@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+import footerImg from "@/img/footer.jpg";
+
 const linkCols = [
   {
     heading: "Company",
@@ -60,7 +62,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="relative h-[38vw] min-h-[220px] max-h-[420px] flex items-end justify-center overflow-hidden">
+      <div className="relative h-[38vw] min-h-[220px] max-h-[420px] flex items-end justify-center overflow-hidden px-6 md:px-10 pb-6 md:pb-12">
         <motion.div
           initial={{ opacity: 0, y: 40, rotate: 8 }}
           whileInView={{ opacity: 1, y: 0, rotate: 5 }}
@@ -71,7 +73,7 @@ export default function Footer() {
           <div className="bg-cream p-2.5 pb-6 w-[130px] shadow-2xl">
             <div className="relative w-full aspect-[4/5] overflow-hidden">
               <Image
-                src="https://picsum.photos/seed/zuhr-footer/300/380"
+                src={footerImg}
                 alt="Zuhr closing portrait"
                 fill
                 className="object-cover"
