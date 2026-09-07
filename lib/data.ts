@@ -8,6 +8,11 @@ import shop5 from "@/img/shop5.jpg";
 import shop6 from "@/img/shop6.jpg";
 import shop7 from "@/img/shop7.jpg";
 import shop8 from "@/img/shop8.jpg";
+import gallery1 from "@/img/gallery1.jpg";
+import gallery2 from "@/img/gallery2.jpg";
+import gallery3 from "@/img/gallery3.jpg";
+import gallery4 from "@/img/gallery4.jpg";
+import gallery5 from "@/img/gallery5.jpg";
 
 export type Product = {
   id: string;
@@ -85,10 +90,9 @@ export const categories = [
 ];
 
 export const galleryImages = [
-  "https://picsum.photos/seed/zuhr-g1/500/650",
-  "https://picsum.photos/seed/zuhr-g2/500/650",
-  "https://picsum.photos/seed/zuhr-g3/500/650",
-  "https://picsum.photos/seed/zuhr-g4/700/650",
-  "https://picsum.photos/seed/zuhr-g5/500/650",
-  "https://picsum.photos/seed/zuhr-g6/500/650",
+  gallery1,
+  gallery2,
+  gallery3,
+  gallery4,
+  gallery5,
 ];

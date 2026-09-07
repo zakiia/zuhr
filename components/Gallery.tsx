@@ -19,7 +19,7 @@ export default function Gallery() {
       >
         {galleryImages.map((src, i) => (
           <button
-            key={src}
+            key={i}
             onMouseEnter={() => setActive(i)}
             onFocus={() => setActive(i)}
             className="relative h-full overflow-hidden transition-[flex-grow] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
