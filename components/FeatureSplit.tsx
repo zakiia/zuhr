@@ -3,24 +3,29 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+import featureImg from "@/img/featuresplit-1.jpg";
+import featureImg2 from "@/img/featuresplit-2.jpg";
+
 export default function FeatureSplit() {
   return (
     <section className="bg-bone">
       <div className="grid md:grid-cols-2">
-        <motion.div
-          initial={{ opacity: 0, scale: 1.05 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative aspect-[4/5] md:aspect-auto md:h-[640px] overflow-hidden"
-        >
-          <Image
-            src="https://picsum.photos/seed/zuhr-feature-1/900/1100"
-            alt="Zuhr street style look"
-            fill
-            className="object-cover"
-          />
-        </motion.div>
+        <div className="pt-6 pb-6 pl-6 md:pt-16 md:pb-16 md:pl-16">
+          <motion.div
+            initial={{ opacity: 0, scale: 1.05 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="relative aspect-[4/5] md:aspect-auto md:h-[600px] overflow-hidden"
+          >
+            <Image
+              src={featureImg}
+              alt="Zuhr street style look"
+              fill
+              className="object-cover"
+            />
+          </motion.div>
+        </div>
 
         <div className="flex items-center justify-center p-8 md:p-16">
           <div className="max-w-sm text-center md:text-left">
@@ -42,7 +47,7 @@ export default function FeatureSplit() {
               className="relative w-40 aspect-[4/5] mx-auto md:mx-0 mt-8 overflow-hidden shadow-xl"
             >
               <Image
-                src="https://picsum.photos/seed/zuhr-feature-2/320/400"
+                src={featureImg2}
                 alt="Featured Zuhr piece"
                 fill
                 className="object-cover"
