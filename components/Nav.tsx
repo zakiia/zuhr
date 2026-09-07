@@ -1,10 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+
+const links = [
+  { href: "#shop", label: "Shop" },
+  { href: "#story", label: "Story" },
+  { href: "#gallery", label: "Gallery" },
+  { href: "#footer", label: "Contact" },
+];
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [time, setTime] = useState("");
 
   useEffect(() => {
@@ -47,18 +55,15 @@ export default function Nav() {
         </a>
 
         <nav className="hidden md:flex items-center gap-8 text-[11px] uppercase tracking-widest2 font-medium">
-          <a href="#shop" className="hover:opacity-60 transition-opacity">
-            Shop
-          </a>
-          <a href="#story" className="hover:opacity-60 transition-opacity">
-            Story
-          </a>
-          <a href="#gallery" className="hover:opacity-60 transition-opacity">
-            Gallery
-          </a>
-          <a href="#footer" className="hover:opacity-60 transition-opacity">
-            Contact
-          </a>
+          {links.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              className="hover:opacity-60 transition-opacity"
+            >
+              {l.label}
+            </a>
+          ))}
         </nav>
 
         <div className="flex items-center gap-4 text-[11px] uppercase tracking-widest2">
@@ -67,13 +72,50 @@ export default function Nav() {
           <span className="tabular-nums opacity-70">{time}</span>
           <button
             aria-label="Menu"
-            className="flex flex-col gap-[5px] group ml-2"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((o) => !o)}
+            className="flex flex-col gap-[5px] group ml-2 p-1 -m-1"
           >
-            <span className="block w-5 h-px bg-current transition-transform group-hover:translate-x-1" />
-            <span className="block w-5 h-px bg-current transition-transform group-hover:-translate-x-1" />
+            <span
+              className={`block w-5 h-px bg-current transition-transform duration-300 ${
+                menuOpen
+                  ? "rotate-45 translate-y-[3px]"
+                  : "group-hover:translate-x-1"
+              }`}
+            />
+            <span
+              className={`block w-5 h-px bg-current transition-transform duration-300 ${
+                menuOpen
+                  ? "-rotate-45 -translate-y-[3px]"
+                  : "group-hover:-translate-x-1"
+              }`}
+            />
           </button>
         </div>
       </div>
+
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.nav
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="md:hidden mt-3 px-6 pb-4 flex flex-col text-[11px] uppercase tracking-widest2 font-medium bg-cream/95 backdrop-blur-md text-ink border-y border-ink/10"
+          >
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setMenuOpen(false)}
+                className="py-3 border-b border-ink/10 last:border-b-0 hover:text-rust transition-colors"
+              >
+                {l.label}
+              </a>
+            ))}
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }

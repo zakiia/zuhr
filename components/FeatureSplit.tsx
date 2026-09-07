@@ -10,7 +10,7 @@ export default function FeatureSplit() {
   return (
     <section className="bg-bone">
       <div className="grid md:grid-cols-2">
-        <div className="pt-6 pb-6 pl-6 md:pt-16 md:pb-16 md:pl-16">
+        <div className="p-6 md:pt-16 md:pb-16 md:pl-16 md:pr-0">
           <motion.div
             initial={{ opacity: 0, scale: 1.05 }}
             whileInView={{ opacity: 1, scale: 1 }}

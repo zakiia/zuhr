@@ -135,7 +135,7 @@ export default function IntroBand() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.08 }}
-            className="group p-6 md:p-8 border-b md:border-b-0 border-r last:border-r-0 border-cream/15 flex items-baseline justify-between gap-2 hover:bg-cream/[0.04] transition-colors"
+            className="group p-6 md:p-8 border-b md:border-b-0 border-r last:border-r-0 border-cream/15 [&:nth-child(2n)]:border-r-0 md:[&:nth-child(2n)]:border-r md:[&:nth-child(4n)]:border-r-0 flex items-baseline justify-between gap-2 hover:bg-cream/[0.04] transition-colors"
           >
             <span className="font-display italic text-rust-light group-hover:translate-x-1 transition-transform">
               {c.label}
